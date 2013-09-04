@@ -49,6 +49,10 @@ public class PrefixMap {
 		internal = new TreeMap<String, TreeSet<String>>();
 	}
 
+	public PrefixMap() {
+		this(1);
+	}
+
 	private String convertWord(String word) {
 		if (word != null) {
 			// Convert word to a consistent format.

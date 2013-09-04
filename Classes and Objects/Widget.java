@@ -24,7 +24,8 @@ public class Widget {
 	 * instead of an instance member.)
 	 *
 	 * TERM: PRIVATE
-	 * Only this class can access this value.
+	 * Only this class can access this value. In general, you
+	 * should make members private unless you have a reason.
 	 *
 	 * TERM: IDENTIFIER
 	 * The name of something, in this case the name of the
@@ -85,6 +86,11 @@ public class Widget {
 		 * may not change. (Try it!)
 		 */
 		this.widgetID = ++numWidgets;
+
+		if (debug) {
+			System.out.println("Created widget #" + widgetID + " named " +
+					widgetName + ".");
+		}
 	}
 
 	/*
@@ -92,12 +98,17 @@ public class Widget {
 	 * You can provide methods with the same name, but different parameters.
 	 * They should do essentially the same thing! A good way to ensure this
 	 * is to call the other overloaded method from this one.
+	 *
+	 * TERM: DEFAULT CONSTRUCTOR
+	 * A constructor that takes no parameters. It is usually a good idea to
+	 * create a default constructor.
 	 */
 	public Widget() {
 		/*
 		 * TERM: THIS
 		 * You can use the "this" keyword as a method too, which will call
-		 * the appropriate constructor.
+		 * the appropriate constructor. This lets you reuse the initialization
+		 * code you have written in a different constructor.
 		 */
 		this("Widget");
 	}
@@ -107,6 +118,9 @@ public class Widget {
 	 * A static method may not access any instance members.
 	 * The method itself does not require an instance to be
 	 * created, and can be accessed through the class name.
+	 *
+	 * If your method does not access any instance members,
+	 * make sure you make it static for a bit of speedup.
 	 *
 	 * TERM: GETTER/GET METHOD
 	 * Since this member is private, other classes cannot
@@ -159,6 +173,11 @@ public class Widget {
 		if (validName(newName)) {
 			this.widgetName = newName;
 			valid = true;
+		}
+
+		if (debug) {
+			System.out.println("Failed to change name for widget #" +
+					widgetID + ".");
 		}
 
 		return valid;

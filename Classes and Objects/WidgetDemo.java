@@ -21,6 +21,11 @@ public class WidgetDemo {
 		System.out.println(Widget.numWidgets());
 
 		/*
+		 * You can access and directly set public static members anytime.
+		 */
+		Widget.debug = true;
+
+		/*
 		 * TERM: INSTANCE
 		 * The following are actual objects, or instances of
 		 * the Widget class. They have their own instance
@@ -52,6 +57,5 @@ public class WidgetDemo {
 		// We are unable to modify the name to an invalid value.
 		widget1.setName(null);
 		System.out.println(widget1);
-
 	}
 }
