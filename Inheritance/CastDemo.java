@@ -1,5 +1,8 @@
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * This class demonstrates very basic upcasting and downcasting.
@@ -98,6 +101,36 @@ public class CastDemo {
 	 */
 	public static void printFirstLetter(CharSequence seq) {
 		System.out.println(seq.charAt(0));
+	}
+
+	/**
+	 * This method demonstrates how it may be useful to use upcasting
+	 * for declaring collections---allowing the implementation class
+	 * to change without affecting the rest of the code.
+	 */
+	public static void setDemo() {
+		// Use upcasting to create a general reference
+		Set<String> set = null;
+
+		// Choose one to comment out
+		set = new TreeSet<String>();
+		set = new HashSet<String>();
+
+		// Everything below here remains the same, even if you
+		// decide to change the underlying set type
+		set.add("apple");
+		set.add("banana");
+		set.add("carrot");
+
+		for (String element : set) {
+			System.out.println(element);
+		}
+
+		/*
+		 * Using upcasting prevents you from using any methods
+		 * specific to, for example, TreeSet, making your code
+		 * more generalized.
+		 */
 	}
 
 	/**
