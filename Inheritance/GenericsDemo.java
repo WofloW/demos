@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * This class demonstrates the Generic syntax, and how to use Generic types to
@@ -10,6 +12,7 @@ import java.util.ArrayList;
  * @author Sophie Engle
  * @author CS 212 Software Development
  * @author University of San Francisco
+ * @see <a href="http://docs.oracle.com/javase/tutorial/java/generics/upperBounded.html">Java Tutorials - Generics</a>
  */
 public class GenericsDemo {
 
@@ -185,11 +188,75 @@ public class GenericsDemo {
 		}
 	}
 
+	/**
+	 * This method demonstrates how to use wildcards to bound the generic
+	 * type to a {@link Number}, and use upcasting.
+	 *
+	 * @see #sumNumbers1(Collection)
+	 * @see #sumNumbers2(Collection)
+	 */
+	public static void wildcardDemo() {
+		List<Number> nums = new ArrayList<>();
+		nums.add(new Double(3.14));
+		nums.add(new Integer(42));
+		System.out.println(sumNumbers1(nums));
+		System.out.println(sumNumbers2(nums));
+
+		List<Integer> ints = new ArrayList<>();
+		ints.add(new Integer(1));
+		ints.add(new Integer(2));
+		System.out.println(sumNumbers1(ints));
+
+		/*
+		 * With just upcasting alone, we will get compile errors when
+		 * we try the following line. This is because while Integer is
+		 * a subclass of Number, List<Integer> is *NOT* a subclass of
+		 * List<Number>. Since they are not subclasses of each other,
+		 * upcasting will fail.
+		 */
+		// System.out.println(sumNumbers2(ints));
+	}
+
+	/**
+	 * This method is part of the {@link #wildcardDemo()} example.
+	 *
+	 * @param nums
+	 * @return
+	 * @see #wildcardDemo()
+	 */
+	public static double sumNumbers1(Collection<? extends Number> nums) {
+		double sum = 0.0;
+
+		for (Number n : nums) {
+			sum += n.doubleValue();
+		}
+
+		return sum;
+	}
+
+	/**
+	 * This method is part of the {@link #wildcardDemo()} example.
+	 *
+	 * @param nums
+	 * @return
+	 * @see #wildcardDemo()
+	 */
+	public static double sumNumbers2(Collection<Number> nums) {
+		double sum = 0.0;
+
+		for (Number n : nums) {
+			sum += n.doubleValue();
+		}
+
+		return sum;
+	}
+
 	public static void main(String[] args) {
 		rawDemo();
 		listDemo();
 		methodDemo();
 		comparableDemo();
 		classDemo();
+		wildcardDemo();
 	}
 }
