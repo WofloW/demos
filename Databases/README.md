@@ -30,3 +30,14 @@ If you want to load the tables into your database from those files, you should u
 
 This will load all of the tables from the `contact_users` example shown in class. (If you run this command twice, it will fail because the tables are already created.)
 
+## Configuring JDBC
+
+Modify `database.properties` with your MySQL username and password. If you
+are connecting from on-campus, then set `hostname=sql.cs.usfca.edu` in the
+properties file.
+
+If you are connecting off-campus, then set `hostname=localhost:3307` in the
+properties file, and create an SSH tunnel to forward anything sent to your
+port 3307 to our MySQL server on campus. The `tunnel.command` file contains
+the SSH command you should use (except you must change `username` to your
+CS username).
