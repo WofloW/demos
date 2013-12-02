@@ -34,7 +34,7 @@ public class StringUtilities {
 	/**
 	 * Checks to see if a String is null or empty.
 	 * @param text - String to check
-	 * @return true if non-null and non-empty
+	 * @return true if null or empty
 	 */
 	public static boolean checkString(String text) {
 		return (text == null) || text.trim().isEmpty();
