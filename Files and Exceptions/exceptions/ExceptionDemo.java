@@ -73,6 +73,7 @@ public class ExceptionDemo {
 	 * notice we have a problem if we return too soon without closing the
 	 * Scanner object.
 	 */
+	@SuppressWarnings("resource")
 	public static void validationDemo() {
 		int earned = 0;
 		int possible = 0;
