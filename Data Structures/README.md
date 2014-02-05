@@ -1,7 +1,7 @@
 Data Structures
 =================================================
 
-These demos illustrate some basic data structures available in Java, how to iterate through these data structures. We also begin discussing mutability in this section, as most data structures are mutable. More discussion on mutability may be found in the [Classes and Objects](../Classes and Objects) section.
+These demos illustrate some basic data structures available in Java, and how to iterate through these data structures. 
 
 *Note that these examples are designed to illustrate specific concepts, and may not be an example of proper class design outside of this context.*
 
@@ -9,11 +9,18 @@ These demos illustrate some basic data structures available in Java, how to iter
 
 The following official [Java Tutorials](http://docs.oracle.com/javase/tutorial/index.html) may be useful:
 
-- Pending
+- [Trail: Collections](http://docs.oracle.com/javase/tutorial/collections/index.html)
+- [Lesson: Generics](http://docs.oracle.com/javase/tutorial/extra/generics/index.html) *(optional)*
 
 The following classes from the [Java 7 API](http://docs.oracle.com/javase/7/docs/api/) may be useful:
 
-- Pending
+- [ArrayList](http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html)
+- [LinkedList](http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html)
+- [HashSet](http://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html)
+- [TreeSet](http://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html)
+- [HashMap](http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html)
+- [TreeMap](http://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html)
+- [Collections](http://docs.oracle.com/javase/7/docs/api/java/util/Collections.html)
 
 ## Relevant Lectures ##
 
