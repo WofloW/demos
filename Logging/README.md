@@ -9,11 +9,16 @@ These demos illustrate some concepts on logging and debugging in preparation for
 
 The following official [Java Tutorials](http://docs.oracle.com/javase/tutorial/index.html) may be useful:
 
-- Pending
+- [Technical Notes: Programming with Assertions](http://docs.oracle.com/javase/7/docs/technotes/guides/language/assert.html)
 
-The following classes from the [Java 7 API](http://docs.oracle.com/javase/7/docs/api/) may be useful:
+The following other resources may be useful:
 
-- Pending
+- [Apache Log4j 2](http://logging.apache.org/log4j/2.x/)
+
+- [IBM developerWorks: Debugging with the Eclipse Platform](http://www.ibm.com/developerworks/library/os-ecbug/)
+
+- [CS Tutoring Center: Enabling Assertions in Eclipse](http://tutoringcenter.cs.usfca.edu/resources/enabling-assertions-in-eclipse.html)
+- [CS Tutoring Center: Adding User Libraries in Eclipse](http://tutoringcenter.cs.usfca.edu/resources/adding-user-libraries-in-eclipse.html)
 
 ## Relevant Lectures ##
 
