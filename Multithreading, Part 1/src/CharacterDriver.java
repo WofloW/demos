@@ -28,6 +28,7 @@ public class CharacterDriver {
 	 */
 	public static void main(String[] args) throws Exception {
 
+		int warmup = 3;
 		int runs = 5;
 
 		// Use two fairly large files to test code.
@@ -56,7 +57,9 @@ public class CharacterDriver {
 
 		// "Warm up" code, loading classes as necessary. Compare times with
 		// and without the warmup part!
-		CharacterCompare.compareSequentially(file1, file2);
+		for (int i = 0; i < warmup; i++) {
+			CharacterCompare.compareSequentially(file1, file2);
+		}
 
 		// Average how long it takes to run sequentially over several runs.
 		for (int i = 0; i < runs; i++) {
@@ -77,7 +80,9 @@ public class CharacterDriver {
 
 		// "Warm up" code, loading classes as necessary. Compare times with
 		// and without the warmup part!
-		CharacterCompare.compareConcurrently(file1, file2);
+		for (int i = 0; i < warmup; i++) {
+			CharacterCompare.compareConcurrently(file1, file2);
+		}
 
 		// Average how long it takes to run concurrently over several runs.
 		for (int i = 0; i < runs; i++) {
