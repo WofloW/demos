@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths; 
+import java.nio.file.Paths;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -163,6 +163,9 @@ public class MultithreadedDirectorySizeCalculator {
 						minions.execute(new DirectoryMinion(path));
 					}
 					else {
+						// This is inefficient, and causes a lot of blocking.
+						// updateCounters(1, Files.size(path));
+
 						// Note that we are adding to LOCAL variables, so we
 						// only lock ONCE when we are done.
 						files += 1;
